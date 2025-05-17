@@ -1,22 +1,15 @@
-
+import os
+from dotenv import load_dotenv
 from app.services.ingestion import asset_store
 from app.core.config import TRACKED_ASSETS
-
-# def generate_summary():
-#     summaries = []
-#     for symbol, asset in asset_store.items():
-#         change = asset.change_percent_24h()
-#         avg_price = asset.average_price_7d()
-#         summaries.append(f"{TRACKED_ASSETS[symbol]} ({symbol}) saw a {change:.2f}% change over the last 24 hours, with a 7-day average price of ${avg_price:.2f}.")
-#     return {"summary": " ".join(summaries)}
-
-
-
 from openai import OpenAI
-import os
 
-# client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
-client = OpenAI(api_key="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")
+load_dotenv() 
+
+openai_api_key = os.getenv("OPENAI_API_KEY")
+client = OpenAI(
+    api_key=openai_api_key
+)
 
 def generate_summary():
     from app.services.ingestion import asset_store

@@ -11,8 +11,6 @@ async def get_assets():
 @router.get("/metrics/{symbol}", response_model=schemas.Metrics)
 async def get_metrics(symbol: str):
     data = metrics.get_metrics(symbol.upper())
-    print("----")
-    print(data)
     if not data:
         raise HTTPException(status_code=404, detail="Asset not found")
     return data

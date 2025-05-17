@@ -1,14 +1,11 @@
 # 📊 Financial Data Aggregator & GenAI Insight Engine
 
----
-
 ## Setup Instructions
 
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/financial_insights.git
-cd financial_insights
+git clone https://github.com/aniruddha-ca/Financial-Data-Aggregator-GenAI-Insight-Engine.git
 ```
 
 ### 2. Create a Virtual Environment
@@ -27,6 +24,16 @@ pip install -r requirements.txt
 ---
 
 ## Run the App
+
+### 1. Setup Env
+
+Create .env add Open AI api key
+```
+OPENAI_API_KEY=<open_api_key>
+```
+
+### 2. Run Fastapi
+
 
 ```bash
 uvicorn app.main:app --reload
